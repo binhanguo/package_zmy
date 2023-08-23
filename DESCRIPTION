@@ -1,0 +1,26 @@
+Package: zmy
+Title: Data preprocessing, plotting, and variable screening
+Version: 1.0.0.0
+Authors@R: 
+    person("Binhan", "Guo", , "2183983697@qq.com", role = c("aut", "cre"))
+Description: Conduct statistical analysis and visualization based on raw data, and establish models and predict important variables through machine learning methods.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    ggplot2,
+    patchwork,
+    purrr,
+    readxl,
+    tibble
+Depends: 
+    caret,
+    glmnet,
+    MLmetrics,
+    plyr,
+    pROC,
+    R (>= 3.5.0),
+    randomForest,
+    tidyverse
+LazyData: true
