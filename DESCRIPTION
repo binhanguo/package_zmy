@@ -1,4 +1,4 @@
-Package: zmy
+Package: package_zmy
 Title: Data preprocessing, plotting, and variable screening
 Version: 1.0.0.0
 Authors@R: 
