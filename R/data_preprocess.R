@@ -68,7 +68,7 @@ outlier_process <- function(data){
 #' @export
 #'
 #' @examples
-#'num_plot(num=iris[,1:3],group=iris[,4])
+#'num_plot(num=iris[,1:4],group=iris[,5])
 num_plot <- function(num,
                      group,
                      width=0.5,
@@ -101,6 +101,12 @@ num_plot <- function(num,
     stop("tibble for the this function to work. Please install it",
          call. = FALSE)
   }
+
+  num <- apply(num, 2, function(x){
+    if(mean(x)<100){x <- x}else if(mean(x)>100 & mean(x)<1000)
+    {x <- log2(x)}else if(mean(x)>1000 & mean(x)<10000)
+    {x <- log(x)}else if(mean(x)>10000){x <- log10(x)}else{}
+  })
 
   res <- apply(num, 2, function(x){
     ks.test(x,"pnorm")
@@ -257,7 +263,7 @@ p[[i]] <- ggplot(a,aes(Var2,percent,fill=Var1))+
       scale_fill_manual(values = color[1:length(levels(a$Var1))])+
       scale_y_continuous(labels = scales::percent_format(scale = 1))+ #百分比y轴
       labs(x="Number of transfusion",
-      y="Percent Weidght",
+      y="Percent Weight",
       fill=colnames(vec)[i])+
       annotate(geom = "text",
      cex=5,
