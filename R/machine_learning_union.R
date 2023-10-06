@@ -8,12 +8,16 @@
 #' @return For regression models, return the performance evaluation list and true/predicted value match plot for each model; For classification models, return the performance evaluation list and ROC curve for each model.
 #' @export
 #'
-#' @examples mtcars$vs <- factor(mtcars$vs,levels=c(0,1)); colnames(mtcars)[8] <- "y"; ML_analysis(data=mtcars,prop=0.7,var_num=ncol(mtcars))
-#' @examples colnames(mtcars)[8] <- "y"; ML_analysis(data=mtcars,prop=0.7,var_num=ncol(mtcars))
+#' @examples colnames(iris)[1] <- "y"; ML_analysis(data=iris,prop=0.7,var_num=4)
 ML_analysis <- function(data,prop,var_num){
 
   if(!requireNamespace("tidymodels",quietly = TRUE)){
     stop("tidymodels for the this function to work. Please install it",
+         call. = FALSE)
+  }
+
+  if(!requireNamespace("fastDummies",quietly = TRUE)){
+    stop("fastDummies for the this function to work. Please install it",
          call. = FALSE)
   }
 
@@ -437,7 +441,5 @@ ML_analysis <- function(data,prop,var_num){
 }
 
 
-tmp <- ML_analysis(data = modeldata,
-                   prop = 0.7,
-                   var_num = ncol(modeldata))
+
 

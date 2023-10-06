@@ -37,5 +37,5 @@ a boxplot according to \code{num} and grouped by \code{group}.
 Box plot of numeric variables
 }
 \examples{
-num_plot(num=iris[,1:3],group=iris[,4])
+num_plot(num=iris[,1:4],group=iris[,5])
 }
