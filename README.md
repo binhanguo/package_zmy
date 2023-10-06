@@ -11,7 +11,7 @@ You can install the development version of zmy like so:
 
 ``` r
 # if(!require(devtools))install.packages("devtools")
-# if(!require(package_zmy))devtools::install_github("binhanguo/package_zmy",upgrade = FALSE,dependencies = TRUE)
+# if(!require(zmy))devtools::install_github("binhanguo/package_zmy",upgrade = FALSE,dependencies = TRUE)
 ```
 
 ## Functions
